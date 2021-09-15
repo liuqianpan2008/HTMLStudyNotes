@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" method="post" enctype="multipart/form-data" i>
+        <!--单选按钮分组-->
+        <input type="radio" value="a" name="X" checked>a
+        <input type="radio" value="a" name="X" disabled>a
+        <label><input type="radio" value="a" name="X1">a</label>
+        <label><input type="radio" value="a" name="X1">a</label>
+
+        <!--按钮在value写，与button相同-->
+        <input type="button" value="按钮">
+        <button>按钮</button>
+
+        <!--label通过for属性绑定id号为username的元素-->
+        <label for="username">用户名</label>
+        <input type="text" name="" id="username">
+
+        <select multiple>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <!--cols与rows为字符数量 ,不允许使用拖拽style="resize: none;"-->
+        <textarea cols="10" rows="3" style="resize: none;"></textarea>
+
+        <input type="datetime-local" name="a" id="time" value="">
+        <button id="button">获取时间</button>
+        <!--datalist 隐藏，需要绑定到其他表单元素，下拉列表且自动匹配文本的文本框-->
+        <input type="text" list="dro">
+        <datalist id="dro">
+            <option value="0"></option>
+            <option value="10"></option>
+            <option value="20"></option>
+            <option value="30"></option>
+        </datalist>
+    </form>
+    <!--表单日期类型为字符串-->
+    <script>
+        var time = document.getElementById('time')
+        var button = document.getElementById('button')
+        button.onclick = function () {
+            alert(time.value);
+        }
+    </script>
+</body>
+
+</html>
