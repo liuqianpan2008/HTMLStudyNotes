@@ -1,0 +1,25 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--invalid：验证无效时候触发的时间-->
+    <from>
+        <input type="text" required>
+        <span></span>
+        <button type="submit">提交</button>
+    </from>
+    <script>
+        var txt = document.getElementsByTagName('input')[0];
+        txt.addEventListener("invalid", function () {
+            document.getElementsByTagName("span")[0].innerHTML("文本框不为空");
+        }, false)
+    </script>
+</body>
+
+</html>
