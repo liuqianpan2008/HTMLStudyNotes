@@ -9,16 +9,32 @@
 
 <body>
     <!--invalid：验证无效时候触发的时间-->
-    <from>
-        <input type="text" required>
+    <from action="#" method="post">
+        <input type="text" required="required">
         <span></span>
-        <button type="submit">提交</button>
+        <input type="submit" value="提交">
     </from>
+
     <script>
         var txt = document.getElementsByTagName('input')[0];
-        txt.addEventListener("invalid", function () {
-            document.getElementsByTagName("span")[0].innerHTML("文本框不为空");
-        }, false)
+        // console.log(txt);
+        // txt.addEventListener("invalid", fn, false)
+        // function fn() {
+        //     alert()
+        // }
+
+        //validity或者表单元素的验证的相关属性。valid为validity二级属性，表示验证的通过
+        var btn = document.getElementsByTagName('input')[1];
+        btn.onclick = function (ev) {
+            // alert(txt.validity.valid);
+            //checkValidity方法与结果与validity.valid相同
+            //alert(txt.checkValidity());
+            //preventDefault阻止默认事件
+            if (!txt.checkValidity) {
+                ev.preventDefault();
+            }
+        }
+
     </script>
 </body>
 
