@@ -1,40 +1,32 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <title></title>
 </head>
 
 <body>
-    <!--invalid：验证无效时候触发的时间-->
-    <from action="#" method="post">
+    <form>
         <input type="text" required="required">
-        <span></span>
-        <input type="submit" value="提交">
-    </from>
-
+        <input type="submit">
+    </form>
     <script>
-        var txt = document.getElementsByTagName('input')[0];
-        // console.log(txt);
-        // txt.addEventListener("invalid", fn, false)
-        // function fn() {
-        //     alert()
-        // }
-
-        //validity或者表单元素的验证的相关属性。valid为validity二级属性，表示验证的通过
-        var btn = document.getElementsByTagName('input')[1];
-        btn.onclick = function (ev) {
-            // alert(txt.validity.valid);
-            //checkValidity方法与结果与validity.valid相同
-            //alert(txt.checkValidity());
-            //preventDefault阻止默认事件
-            if (!txt.checkValidity) {
-                ev.preventDefault();
-            }
+        var txt = document.querySelector('input');
+        var btn = document.querySelectorAll('input')[1];
+        txt.oninput = function () {
+            // if进行自定义不合理条件判断
+            if (this.value == "abc")
+                // setCustomValidity设置用户自定义验证提示信息
+                this.setCustomValidity('用户名已存在');
+            else
+                this.setCustomValidity('');
         }
-
+        txt.addEventListener('invalid', fn, false);
+        function fn(ev) {
+            // .....
+            //ev.preventDefault();	
+        }
     </script>
 </body>
 
