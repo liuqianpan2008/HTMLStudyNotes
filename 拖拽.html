@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dragbj {
+            width: 100px;
+            height: 100px;
+            background: rgb(255, 0, 0);
+        }
+
+        #tar {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!--draggable是否可以拖拽-->
+    <div id='dragbj' draggable="true"></div>
+    <br>
+    <div id='tar'>回收站</div>
+    <script>
+        var dragobj = document.querySelector("#dragbj");
+        var i = 0
+        var tarobj = document.querySelector("#tar");
+        //拖拽开始事件
+        dragobj.ondragstart = function () {
+            this.style.opacity = 0.6
+
+        }
+        //拖拽结束事件
+        dragobj.ondragend = function () {
+            this.style.opacity = 1
+        }
+        //拖拽时事件
+        dragobj.ondrag = function (ev) {
+
+            console.log(i++);
+            ev.preventDefault()
+        }
+
+        // tarobj.ondragover = function () {
+        //     //反复触发事件与ondrag事件相同
+        // }
+
+        //拖拽元素进入
+        tarobj.ondragenter = function () {
+            this.style.background = 'blue';
+        }
+        //拖拽元素离开
+        tarobj.ondragleave = function () {
+            this.style.background = '#fff';
+        }
+
+        tarobj.ondrop = function () {
+            alert("555");
+        }
+    </script>
+</body>
+
+</html>
