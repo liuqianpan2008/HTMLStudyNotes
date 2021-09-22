@@ -40,14 +40,14 @@
         }
         //拖拽时事件
         dragobj.ondrag = function (ev) {
-
             console.log(i++);
             ev.preventDefault()
         }
 
-        // tarobj.ondragover = function () {
-        //     //反复触发事件与ondrag事件相同
-        // }
+        tarobj.ondragover = function (ev) {
+            //反复触发事件与ondrag事件相同
+            ev.preventDefault();
+        }
 
         //拖拽元素进入
         tarobj.ondragenter = function () {
@@ -59,8 +59,10 @@
         }
 
         tarobj.ondrop = function () {
-            alert("555");
+
+            alert("");
         }
+
     </script>
 </body>
 
