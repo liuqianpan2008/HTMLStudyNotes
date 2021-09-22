@@ -25,10 +25,14 @@
     <div id='dragbj' draggable="true"></div>
     <br>
     <div id='tar'>回收站</div>
+    <button>恢复</button>
     <script>
         var dragobj = document.querySelector("#dragbj");
         var i = 0
         var tarobj = document.querySelector("#tar");
+        var bodyobj = document.querySelector('body');
+        var removeobj
+        var btn = document.querySelector('button');
         //拖拽开始事件
         dragobj.ondragstart = function () {
             this.style.opacity = 0.6
@@ -59,8 +63,15 @@
         }
 
         tarobj.ondrop = function () {
+            removeobj = bodyobj.removeChild(dragobj);
 
-            alert("");
+        }
+        btn.onclick = function () {
+            //bodyobj.appendChild(removeobj)
+            //插入节点
+            bodyobj.insertBefore(removeobj, tarobj)
+            //bodyobj.firstElementChild(removeobj);
+
         }
 
     </script>
