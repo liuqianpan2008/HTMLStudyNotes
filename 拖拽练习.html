@@ -6,41 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .a {
+        li {
             width: 100px;
-            height: 100px;
-            background: rgb(167, 104, 104);
-            border: 1px solid #000;
-
+            background: red;
+            margin: 4px;
         }
 
-        .b {
+        div {
             width: 200px;
-            height: 200px;
-            border: 1px solid #000;
+            height: 150px;
+            border: 1px solid rgb(0, 0, 0);
         }
     </style>
 </head>
 
 <body>
-    <div class="a" draggable="true"></div><br>
-    <div class="a" draggable="true"></div><br>
-    <div class="a" draggable="true"></div><br>
-    <div class="a" draggable="true"></div><br>
-    <div class="a" draggable="true"></div><br>
-    <div class="b"></div><br>
-    <button>清空回收站</button>
+    <ul>
+        <li draggable="true">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <div>回收站</div>
     <script>
-        var aObj = document.querySelector(".a");
-        var bObj = document.querySelector(".b");
-        var bodyobj = document.querySelector("body")
-        var bt = document.querySelector("button")
+        var ali = document.querySelectorAll("li");
+        var oDiv = document.querySelector('div');
+        var bodyobj = document.querySelector("ul")
         var removeobj
-
-
-
-
-
+        for (let i = 0; i < ali.length; i++) {
+            ali[i].draggable = 'true';
+            ali[i].ondragstart = function (ev) {
+                var ev = ev || window.event;
+                ev.dataTransfer.setData('index', i);
+            }
+        }
+        oDiv.ondragover = function (ev) {
+            //反复触发事件与ondrag事件相同
+            ev.preventDefault();
+        }
+        oDiv.ondrop = function (ev) {
+            var ev = ev || window.event;
+            var index = ev.dataTransfer.getData('index')
+            bodyobj.removeChild(ali[index]);
+        }
     </script>
 </body>
 
