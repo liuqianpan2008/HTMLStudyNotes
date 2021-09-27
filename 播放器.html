@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            //currenttime播放时间
+            var ov = document.querySelector("video")
+            var aB = document.querySelectorAll("button")
+            //var timer = setInterval(function () { console.log(ov.currentTime) }, 1000)
+            //ov.currenttime = 50;//单位秒
+            //duration视频时长
+
+            //volume声音大小
+            var timer = setInterval(function () { console.log(ov.volume) }, 1000)
+            aB[0].onclick = function () { ov.play() }//播放
+            aB[1].onclick = function () { ov.pause() }//暂停
+            document.onkeypress = function (ev) {
+
+                var ev = ev || window.event
+                console.log(ev.keyCode);
+
+                if (ev.keyCode == 32) {
+                    if (ov.paused) {
+                        ov.play()
+                    } else {
+                        ov.pause()
+                    }
+                }
+
+                // if (ov.paused && ev.keyCode == 32) {
+                //     ov.play()
+                // } else {
+                //     if (ev.keyCode == 32) {
+                //         ov.pause()
+                //     }
+                // }
+
+                // if (ev.keyCode == 32 && ov.paused) {
+                //     ov.play()
+                //     return false
+
+                // }
+                // if (ev.keyCode == 32 && !ov.paused) {
+                //     ov.pause()
+                //     return false
+                // }
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!--默认编辑器-->
+    <!-- <video src="img/Yuan Shen 原神 2021.09.23 - 21.34.25.01.mp4" controls></video> -->
+    <!--
+        <video>
+         source找到能正常播放文件为止
+        <source src="img/Yuan Shen 原神 2021.09.23 - 21.34.25.01.mp4"></source>
+    </video>
+    -->
+    <!-- autoplay自动播放 controls播放控件 loop循环播放 poster加载等待画面 muted 静音播放(解决谷歌禁用自动播放) -->
+
+
+
+    <video controls width="320" height="240">
+        source找到能正常播放文件为止
+        <source src="img/Yuan Shen 原神 2021.09.23 - 21.34.25.01.mp4">
+        </source>
+    </video>
+    <button>播放</button>
+    <button>暂停</button>
+</body>
+
+</html>
