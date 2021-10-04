@@ -6,8 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div {
-            margin: 0 auto;
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        #box {
+            display: inline-block;
+            height: 223px;
+            width: 229px;
+            /* transition时长 */
+            /* transition: 3s; */
+        }
+
+        #box:hover {
+            /* linear重复播放  infinite播放速度一致*/
+
+            animation: mymove 3s linear infinite;
+            /* rotate旋转 */
+            /* -webkit-transform: rotate(360deg); */
         }
 
         div div {
@@ -15,26 +33,34 @@
             width: 100px;
             height: 100px;
             border: 1px solid black;
+            margin: 5px;
+        }
+
+        /* 动画名 */
+        @keyframes mymove {
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         div div:nth-child(1),
-        div div:nth-child(5) {
+        div div:nth-child(4) {
             border-radius: 0px 80px 0px 80px;
         }
 
         div div:nth-child(2),
-        div div:nth-child(4) {
+        div div:nth-child(3) {
             border-radius: 80px 0px 80px 0px;
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <div>1</div>
-        <div>2</div><br>
-        <div>3</div>
-        <div>4</div>
+    <div id="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
 
 </body>
