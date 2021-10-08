@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 600px;
+            height: 600px;
+            background: url(img/QQ图片20210929143743.png) center no-repeat;
+            -webkit-mask:url(img/1XE6lF.png) no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        window.onload=function(){
+            var Odiv=document.querySelector("div");
+            Odiv.onmousemove=function(ev){
+                Odiv.style.webkitMaskPosition = (ev.clientX)+"px "+ (ev.clientY)+"px"
+            }
+        }
+    </script>
+    
+</body>
+</html>
