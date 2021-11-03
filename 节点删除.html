@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="JQ/jquery-3.6.0.js"></script>
+    <script>
+        $(() => {
+            // $("#d2").remove()事件清空
+            // $("#d2").detach()事件保留
+
+            var obj
+            $("#d2").click(() => {
+                alert("1111111")
+            })
+            $("button").eq(0).click(() => {
+                // $(selector).empty()
+                // empty() 删除该节点内所有内容但保留这个节点
+                // 本身
+                console.log($("#d2").empty());
+                obj = $("#d2").remove()
+            })
+            $("button").eq(1).click(() => {
+                $("body").append(obj);
+                $("#d1").append(obj);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="d1">d1</div>
+    <div id="d2">d2</div>
+    <div id="d3">d3</div>
+    <div id="d4">d4</div>
+    <button>删除</button>
+    <button>添加</button>
+</body>
+
+</html>

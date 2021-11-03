@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="JQ/jquery-3.6.0.js"></script>
+    <script>
+        $(function () {
+            //#d1插入#d4的后面（兄弟关系），其他节点保持不变
+            // $("#d1").insertAfter("#d4")
+            //#d1插入#d4的前面（兄弟关系），其他节点保持不变
+            // $("#d1").insertBefore("#d4")
+            // after方法在被选元素后插入指定的内容。可以是函数
+            // $("#d1").after("tx");
+            // before方法在被选元素前插入指定的内容。可以是函数
+            // $("#d1").before("tx");
+            // append() 方法在被选元素的结尾插入指定内容。可以是函数
+            // $("#d1").append();
+            // prepend() 方法在被选元素的开头（仍位于内部）插入指定内容。
+            // $("#d1").prepend();
+            // appendTo() 方法在被选元素的结尾（仍然在内部）插入指定内容。
+            // $("#d1").appendTo();
+            //prependTo() 方法在被选元素的开头（仍位于内部）插入指定内容。
+            // $("#d1").prependTo();
+
+        })
+    </script>
+</head>
+
+<body>
+    <!-- 节点操作包括什么
+    insertAfter()后插
+    insertBefore()前插
+    after(),before()
+    append()
+    perpend()
+    appendTo()
+    prependTo() -->
+    <div id="d1">d1</div>
+    <div id="d2">d2</div>
+    <div id="d3">d3</div>
+    <div id="d4">d4</div>
+</body>
+
+</html>
