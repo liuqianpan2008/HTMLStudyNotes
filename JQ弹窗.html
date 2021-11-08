@@ -1,0 +1,62 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            background: rgba(133, 58, 58, 0.753);
+            border: 1px solid #000;
+            position: absolute;
+            /* display: none; */
+            text-align: center;
+            line-height: 300px;
+            font-size: 40px;
+            color: #fff;
+
+        }
+
+        div button {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+    <script>
+        $(() => {
+            var div = $("<div>一刀9999</div>");
+            var X = $("<button>X</button>")
+            $("body").append(div);
+            $(div).append(X);
+            $(div).css("display", 'none')
+            var tc
+            $("button").eq(0).click(() => {
+                $(div).css("display", 'block')
+                if (tc != "") {
+                    $("body").append(tc);
+                }
+
+            })
+            $("button").eq(1).click(() => {
+                tc = $("div").detach()
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>传奇霸业,点开畅玩</button>
+</body>
+
+</html>

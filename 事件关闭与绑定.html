@@ -1,0 +1,26 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>div</div>
+    <button>关闭mouseover</button>
+    <script>
+        $("div").on('click mouseover', () => {
+            alert("")
+        })
+        $("button").click(() => {
+            // $('div').off()//关闭所以事件响应
+            // $('div').off('mouseover')//通过参数关闭事件响应
+            // $('div').off('click mouseover')//关闭多个事件方法
+        })
+    </script>
+</body>
+
+</html>
