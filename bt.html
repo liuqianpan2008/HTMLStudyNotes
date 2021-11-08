@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(() => {
+            $("input").val("请输入")
+            $("button").click(() => {
+                $("input").val("").focus();
+            })
+
+            $("input").focus(function () {
+                $("input").val("");
+            })
+            $('input').blur(function () {
+                if ($(this).val() == "") {
+                    $("input").val("请输入")
+                }
+            });
+        })
+    </script>
+</head>
+
+<body>
+
+    <input type="text">
+    <button>点击获取焦点</button>
+</body>
+
+</html>

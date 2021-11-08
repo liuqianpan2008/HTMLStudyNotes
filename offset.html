@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            margin: 30px;
+            background: red;
+            position: relative;
+        }
+
+        #div {
+            width: 100px;
+            height: 100px;
+            margin: 40px;
+            padding: 10px;
+            background: #000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        $(() => {
+
+            //到窗口位置
+            // console.log($('#div').offset().left);
+            //最近的定位父级，（包括外边距）
+            // console.log($('#div').position().left);
+
+            // console.log(document.querySelector('#div').offsetLeft);
+            // //到窗口位置，定位到父级位置（不含margin）
+        })
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <div id="div"></div>
+    </div>
+
+    </script>
+</body>
+
+</html>
