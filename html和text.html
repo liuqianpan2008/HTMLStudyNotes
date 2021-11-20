@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div id="father">div1 <span>span</span>
+        <div id="son">div2</div>
+    </div>
+    <script>
+        $(() => {
+            console.log($("#father").html());
+            console.log($("#father").text());
+            // $("#father").html("<span>内容</span")
+            $("#father").text("<span>内容</span")
+        })
+    </script>
+</body>
+
+</html>

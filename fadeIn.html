@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(() => {
+            $("button").click(() => {
+                //元素必须display: none;否则无法使用
+                //在节点加入display: block;节点被显示
+                //fadeIn(speed,callback)
+                //speed 淡入时长（毫秒）或者slow，fast，callback完成后所执行函数可以为匿名函数
+                // $("div").fadeIn(1000, () => {
+                //     console.log("执行完成");
+                //     //this指针为win
+                //     // console.log($(this));
+                // });
+                //原理在节点加入display: none;样式实现淡出，节点被隐藏
+                // $("div").fadeOut(1000);
+
+                //fadeToggle 方法可以在 fadeIn() 与 fadeOut() 方法之间进行切换。
+                //元素淡入则淡出
+                //元素淡出则淡入
+                // $('div').fadeToggle(1000)
+
+                //fadeTo方法允许渐变为给定的不透明度(0-1) 到指定透明度就停止
+                //fadeTo(时间，透明度，执行完毕回调函数)
+                // $('div').fadeTo("slow", 0.15);
+
+                //可以混用 混用先执行前面的后执行后面的。
+                //若前面不执行直接执行后面
+                // $("div").fadeIn(1000).fadeOut(2000);
+
+            })
+        })
+    </script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <button>fadeIn</button>
+</body>
+
+</html>

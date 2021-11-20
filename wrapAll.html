@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(() => {
+            //wrap添加父级 每个节点都添加五级
+            // $('.box').wrapAll("<div id='box'>")
+            //wrapAll添加父级 每个节点公用一个父级
+            //慎用 跳过非条件的节点
+            $("#son").unwrap("<div id='box'>");
+            //unwrap删除父节点
+            //父节点如果是body不会执行
+            // wrapInner
+            //包裹节点下的文字 每个节点各包裹
+            //若节点下有子集则改节点不会被包裹
+            $(".box").wrapInner("<div>");
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div id="son">
+        </div>
+    </div>
+
+    <div class="box">box2 <div>123</div>
+    </div>
+    <span>span</span>
+    <div class="box">box3</div>
+
+</body>
+
+</html>

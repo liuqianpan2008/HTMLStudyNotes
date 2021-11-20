@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        a {}
+    </style>
+</head>
+
+<body>
+    <div>text</div>
+    <script>
+        $(() => {
+            //hover(鼠标移入效果，鼠标移出效果)
+            $('div').hover(() => {
+                $(this).css('background', '#000')
+            }, () => { $(this).css('background', '#fff') })
+        })
+    </script>
+</body>
+
+</html>

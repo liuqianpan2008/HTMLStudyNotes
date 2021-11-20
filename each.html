@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>123</div>
+    <div>456</div>
+    <div>789</div>
+    <script>
+        $(function () {
+            $('div').each((i, elem) => {
+                console.log(i);
+                console.log($(elem).html());
+                // console.log($(this).html());
+            });
+            //i循环变量 elem当次循环执行的对应变量
+        })
+
+    </script>
+</body>
+
+</html>
